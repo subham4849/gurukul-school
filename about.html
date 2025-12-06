@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Gurukul Public School</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: #1d1d1f;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1d1d1f;
+        }
+
+        .nav-link {
+            color: #1d1d1f;
+            font-weight: 600;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0071e3;
+        }
+
+        .btn-apply {
+            background: #0071e3;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-apply:hover {
+            background: #0077ed;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 113, 227, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            background: linear-gradient(135deg, rgba(0, 40, 80, 0.95), rgba(0, 20, 40, 0.9)), 
+                        url('https://images.unsplash.com/photo-1562774053-701939374585?w=1920') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn-journey {
+            background: #ffd60a;
+            color: #1d1d1f;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            border: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-journey:hover {
+            background: #ffc300;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 214, 10, 0.4);
+        }
+
+        /* Who We Are Section */
+        .who-we-are {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .illustration-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 100%;
+        }
+
+        .illustration-box img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .content-text {
+            max-width: 100%;
+        }
+
+        .content-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #1d1d1f;
+        }
+
+        .content-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a5568;
+            margin-bottom: 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .value-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #0071e3, #005bb5);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+
+        .value-item span {
+            font-weight: 700;
+            color: #1d1d1f;
+            font-size: 1.05rem;
+        }
+
+        /* Mission Vision Values */
+        .mvv-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 100%;
+        }
+
+        .mvv-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .mvv-card h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+        }
+
+        .mvv-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Principal Message */
+        .principal-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #002850 0%, #001428 100%);
+            color: white;
+        }
+
+        .principal-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .principal-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .message-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .message-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .principal-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffd60a;
+            margin-top: 2rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .stats-highlight {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #0071e3;
+            margin-bottom: 1rem;
+        }
+
+        .stats-subtext {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1d1d1f;
+            letter-spacing: 2px;
+        }
+
+        .stats-description {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        /* Why Choose Us */
+        .choose-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 4rem;
+            color: #1d1d1f;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 100%;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ffd60a, #ffc300);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .feature-card h4 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #1d1d1f;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #002850 0%, #001428 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+
+        .btn-admission {
+            background: #0071e3;
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 30px;
+            font-weight: 700;
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-admission:hover {
+            background: #0077ed;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 113, 227, 0.4);
+        }
+
+        @media (max-width: 1024px) {
+            .section-content,
+            .principal-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .mvv-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .illustration-box {
+                order: 2;
+            }
+
+            .content-text {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .hero-section {
+                height: 60vh;
+                padding: 0 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .btn-journey {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .content-text h2 {
+                font-size: 2rem;
+            }
+
+            .content-text p {
+                font-size: 1rem;
+            }
+
+            .mvv-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .mvv-card,
+            .feature-card {
+                padding: 2rem;
+            }
+
+            .principal-content {
+                text-align: center;
+            }
+
+            .principal-image {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .message-content h2 {
+                font-size: 2rem;
+            }
+
+            .message-content p {
+                font-size: 1rem;
+            }
+
+            .stats-highlight {
+                font-size: 4rem;
+            }
+
+            .stats-subtext {
+                font-size: 1.2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .btn-admission {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .who-we-are,
+            .mvv-section,
+            .principal-section,
+            .choose-section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn-apply {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .values-grid {
+                gap: 1rem;
+            }
+
+            .value-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+
+            .value-item span {
+                font-size: 0.95rem;
+            }
+
+            .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .feature-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .mvv-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+        /* Container Layout */
+.principal-content {
+    display: flex;
+    align-items: center;       /* Centers vertically */
+    justify-content: center;
+    gap: 40px;                 /* Space between image and text */
+    flex-wrap: wrap;           /* Allows stacking on mobile */
+    padding: 40px 0;
+}
+
+/* Responsive Image Styling */
+.principal-image {
+    width: 100%;               /* Responsive width */
+    max-width: 450px;          /* LIMITS size so it doesn't get too big (Change to 500px if you want bigger) */
+    height: auto;              /* Maintains aspect ratio */
+    border-radius: 15px;       /* Professional rounded corners */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Nice shadow effect */
+    object-fit: cover;
+    flex: 1 1 300px;           /* Flex grow/shrink logic */
+}
+
+/* Text Content Styling */
+.message-content {
+    flex: 1 1 400px;           /* Allows text to take up remaining space */
+    min-width: 300px;          /* Prevents text from getting too squished */
+}
+
+/* --- MOBILE SPECIFIC FIXES --- */
+@media (max-width: 768px) {
+    .principal-content {
+        flex-direction: column; /* Stacks Image on top, Text below */
+        text-align: center;     /* Centers text on mobile */
+    }
+
+    .principal-image {
+        max-width: 100%;        /* Full width on mobile */
+        margin-bottom: 20px;    /* Space below image */
+    }
+}
+/* Increase Image Size + Make Responsive */
+.illustration-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Increase size for larger screens */
+@media (min-width: 1200px) {
+    .illustration-box {
+        padding: 3.5rem;
+    }
+
+    .illustration-box img {
+        max-height: 450px;
+    }
+}
+
+/* Tablet View */
+@media (max-width: 992px) {
+    .illustration-box img {
+        width: 100%;
+        max-height: 380px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    .section-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .illustration-box {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .illustration-box img {
+        width: 100%;
+        max-height: 300px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-graduation-cap me-2"></i>Gurukul Public School
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.php">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="academics.php">Academics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-3">
+                        <button class="btn-apply">Apply Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content" data-aos="fade-up">
+            <div>
+                <h1>Shaping Minds.<br>Transforming Futures.</h1>
+                <p>A place where dreams take flight and excellence takes shape.</p>
+                <button class="btn-journey">Explore Our Journey</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="who-we-are">
+        <div class="container">
+            <div class="section-content">
+                <div class="illustration-box" data-aos="fade-right">
+                    <img src="assets/images/school.jpg" alt="Classroom">
+                </div>
+                <div class="content-text" data-aos="fade-left">
+                    <h2>About the School</h2>
+                    <p>Gurukul Public Senior Secondary School, Baru Hamirpur, is a co-educational institution offering classes from Kindergarten to 10+2 (Science). Established in 2010, the school has grown into a respected learning hub with 500 students and 50 dedicated teaching staff.</p>
+                    
+                    <p>Located along Lambloo Road, the school provides safe transportation with 10 school buses, each accompanied by responsible staff to ensure student safety and comfort.</p>
+                    
+                    <p>Our educators are experienced, skilled, and passionate about helping every child realize their potential. Along with academics, students are encouraged to build confidence, communication skills, discipline, and strong moral values. Preparation for competitive exams is also a part of the learning system.</p>
+                    
+                    <p>The school organizes educational trips, sports meets, and annual award ceremonies every year to promote holistic development. Students are encouraged to think creatively, communicate in English, and actively participate in lessons and projects.</p>
+                    
+                    <p>At Gurukul, learning is meaningful, engaging, and full of discovery — a true adventure for every child.</p>
+                    
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <span>Discipline</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <span>Learning</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span>Quality</span>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <span>Respect</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Values -->
+    <section class="mvv-section">
+        <div class="container">
+            <div class="mvv-grid">
+                <div class="mvv-card" data-aos="fade-up" data-aos-delay="0">
+                    <h3>Our Mission</h3>
+                    <p>To empower students with skills and values that enable them to become responsible global citizens and leaders of tomorrow.</p>
+                </div>
+                <div class="mvv-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Our Vision</h3>
+                    <p>To be India's leading educational institution that nurtures excellence and inspires lifelong learning.</p>
+                </div>
+                <div class="mvv-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Core Values</h3>
+                    <p>Integrity, Excellence, Collaboration, Innovation - these are the core values that guide every aspect of our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Message -->
+    <section class="principal-section">
+        <div class="container">
+            <div class="principal-content">
+                <img src="assets/images/principal_sir.png" 
+                     alt="Principal" class="principal-image" data-aos="fade-right">
+                <div class="message-content" data-aos="fade-left">
+                    <h2>Message from the Principal</h2>
+                    <p>As the Principal of Gurukul Public Senior Secondary School, Baru Hamirpur, I feel privileged to be part of an institution where every day is a new opportunity to learn and grow. We see ourselves as a community of learners — students, teachers, parents, and staff — working together to achieve excellence. Our commitment is to maintain high standards while continuously improving the learning process through teamwork and dedication.</p>
+                    
+                    <p>At our school, we follow a balanced approach of Love and Logic. Love helps create a caring and trusting environment where students feel respected and supported, while Logic helps them build responsibility, self-discipline, confidence, and strong moral values. We believe that education is a shared journey, strengthened through a meaningful partnership between home and school.</p>
+                    
+                    <p>We welcome open communication and encourage parents to connect with us. Together, we aim to create an environment where students are engaged in meaningful learning and every effort is valued and appreciated.</p>
+                    
+                    <p style="margin-top: 2rem; font-style: italic;">— H. S. Verma</p>
+                    <div style="opacity: 0.8;">Principal, Gurukul Public School</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container" data-aos="zoom-in">
+            <div class="stats-highlight">15+</div>
+            <div class="stats-subtext">YEARS OF EXCELLENCE</div>
+            <p class="stats-description">Empowering students since 2010 with innovative education and comprehensive development.</p>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="choose-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4>Smart Classrooms</h4>
+                    <p>State-of-the-art technology-enabled classrooms for interactive and engaging learning experiences.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Safe Campus</h4>
+                    <p>24/7 security with CCTV surveillance ensuring a safe and secure environment for all students.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>Qualified Educators</h4>
+                    <p>Experienced and dedicated teachers committed to nurturing each student's potential.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h4>Sports & Fitness</h4>
+                    <p>Comprehensive sports programs and modern facilities promoting physical fitness and teamwork.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4>Technology & Innovation</h4>
+                    <p>Advanced computer labs and STEM programs preparing students for the digital future.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>Holistic Development</h4>
+                    <p>Focus on academic excellence, character building, and overall personality development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container" data-aos="fade-up">
+            <h2>"Learning Today, Leading Tomorrow"</h2>
+            <a href="admission.html">
+                <button class="btn-admission">Apply for Admission</button>
+            </a>    
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+
+</body>
+</html>

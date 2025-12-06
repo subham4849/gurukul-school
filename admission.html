@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Gurukul Public School Baru</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                 <img src="assets/images/logo.jpeg" alt="School Logo" class="school-logo">
+                <span class="ms-2">Gurukul Public School Baru</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="admission.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-primary px-4">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="index.html" class="btn btn-outline-primary">
+            <span class="back-arrow">←</span> Back to Home
+        </a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Admissions 2026-27</h1>
+            <p class="lead text-muted">Join Our Community of Excellence</p>
+        </div>
+    </section>
+
+    <!-- Admission Process -->
+    <section class="admission-process py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Simple 3-Step Admission Process</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="process-card text-center">
+                        <div class="process-icon">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold mb-3">1. Submit Online Form</h4>
+                        <p class="text-muted">Fill out the online application with all the required details.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-card text-center">
+                        <div class="process-icon">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <path d="M9 15l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold mb-3">2. Document Verification</h4>
+                        <p class="text-muted">Upload the necessary documents for our team to review.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-card text-center">
+                        <div class="process-icon">
+                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h4 class="fw-bold mb-3">3. Student & Parent Interaction</h4>
+                        <p class="text-muted">A final interaction to complete the admission process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Required Documents & Application Form -->
+    <section class="documents-form py-5 bg-light">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Required Documents -->
+                <div class="col-lg-5">
+                    <div class="documents-card">
+                        <h3 class="h4 fw-bold mb-4">Required Documents</h3>
+                        <ul class="document-list">
+                            <li>
+                                <span class="doc-icon">📄</span>
+                                <span>Student's Birth Certificate</span>
+                            </li>
+                            <li>
+                                <span class="doc-icon">📊</span>
+                                <span>Previous Year's Mark Sheets</span>
+                            </li>
+                            <li>
+                                <span class="doc-icon">🔄</span>
+                                <span>Transfer Certificate (if applicable)</span>
+                            </li>
+                            <li>
+                                <span class="doc-icon">📸</span>
+                                <span>4 Passport-sized Photographs of the Student</span>
+                            </li>
+                            <li>
+                                <span class="doc-icon">🆔</span>
+                                <span>Aadhaar Card of the Student and Parents</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <div class="col-lg-7">
+                    <div class="application-form">
+                        <h3 class="h4 fw-bold mb-4">Apply Online</h3>
+                       <form id="admissionForm" action="backend/submit.php" method="POST">
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Student's Full Name *</label>
+            <input type="text" name="student_name" class="form-control" placeholder="John Doe" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Class Applying For *</label>
+            <select class="form-select" name="class" required>
+                <option value="">Select Class</option>
+                <option value="kg">Kindergarten</option>
+                <option value="1">Grade I</option>
+                <option value="2">Grade II</option>
+                <option value="3">Grade III</option>
+                <option value="4">Grade IV</option>
+                <option value="5">Grade V</option>
+                <option value="6">Grade VI</option>
+                <option value="7">Grade VII</option>
+                <option value="8">Grade VIII</option>
+                <option value="9">Grade IX</option>
+                <option value="10">Grade X</option>
+                <option value="11">Grade XI</option>
+                <option value="12">Grade XII</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Date of Birth *</label>
+            <input type="date" name="dob" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Gender *</label>
+            <select class="form-select" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Parent's Name *</label>
+            <input type="text" name="parent_name" class="form-control" placeholder="Parent Name" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Relationship *</label>
+            <select class="form-select" name="relationship" required>
+                <option value="">Select</option>
+                <option value="father">Father</option>
+                <option value="mother">Mother</option>
+                <option value="guardian">Guardian</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Contact Number *</label>
+            <input type="tel" name="contact" class="form-control" placeholder="62302*****" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Email Address *</label>
+            <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+
+        <div class="col-12">
+            <label class="form-label">Residential Address *</label>
+            <textarea class="form-control" name="address" rows="2" placeholder="Address" required></textarea>
+        </div>
+
+        <div class="col-12">
+            <label class="form-label">Previous School (if applicable)</label>
+            <input type="text" name="previous_school" class="form-control" placeholder="Previous School Name">
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">Submit Application</button>
+        </div>
+    </div>
+
+</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure -->
+    <section class="fee-structure py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-3">Fee Structure 2024-2025</h2>
+            <p class="text-center text-muted mb-5">A clear and transparent fee structure for all grades.</p>
+            
+            <div class="table-responsive">
+                <table class="table fee-table">
+                    <thead>
+                        <tr>
+                            <th>CLASS/GRADE</th>
+                            <th>ADMISSION FEE</th>
+                            <th>TUITION FEE (QUARTERLY)</th>
+                            <th>ANNUAL CHARGES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Kindergarten</strong></td>
+                            <td>$500</td>
+                            <td>$1,200</td>
+                            <td>$300</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grade I - V</strong></td>
+                            <td>$600</td>
+                            <td>$1,500</td>
+                            <td>$400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grade VI - VIII</strong></td>
+                            <td>$650</td>
+                            <td>$1,800</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grade IX - X</strong></td>
+                            <td>$700</td>
+                            <td>$2,200</td>
+                            <td>$600</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-info mt-4" role="alert">
+                <strong>Note:</strong> Fee structure is subject to revision. Scholarships and financial aid available for deserving students.
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Frequently Asked Questions</h2>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What is the age criteria for admission?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            For Kindergarten, the child must be at least 3 years old as of April 1st of the admission year. For other grades, age criteria vary based on the grade level. Please contact our admission office for specific age requirements.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What curriculum does the school follow?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Gurukul Public School Baru follows the HPBOSE  curriculum with a focus on holistic development. We also integrate modern teaching methodologies and technology to enhance learning outcomes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            What are the school timings?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            School timings are from 8:00 AM to 2:30 PM for all grades. Extended care and after-school programs are available until 5:00 PM for parents who need additional support.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Does the school provide transportation facilities?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we provide GPS-enabled bus transportation covering all major areas of the city. The buses are equipped with safety features, trained drivers, and attendants. Transportation charges are separate from tuition fees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Is there an entrance examination?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            For Kindergarten to Grade II, there is no formal entrance exam. For Grade III and above, a basic assessment is conducted to understand the student's current level and ensure proper grade placement.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                            Are scholarships available?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, we offer merit-based and need-based scholarships to deserving students. Applications for scholarships can be submitted along with the admission form. Our scholarship committee reviews all applications carefully.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-3">Ready to Join Our Family?</h2>
+            <p class="lead text-muted mb-4">Start your child's journey to excellence today!</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#" class="btn btn-primary btn-lg px-5" onclick="document.getElementById('admissionForm').scrollIntoView({behavior: 'smooth'})">Apply Now</a>
+                <a href="index.html#contact" class="btn btn-outline-primary btn-lg px-5">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="brand-icon bg-white text-dark">G</div>
+                        <h5 class="ms-2 mb-0">Gurukul Academy</h5>
+                    </div>
+                    <p class="text-white-50">Committed to providing quality education and fostering an environment of excellence.</p>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="admission.html" class="text-white-50 text-decoration-none">Admissions</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="col-lg-3 col-6">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <div class="text-white-50">
+                        <p class="mb-2">📍( Baru ) Hamirpur,<br>Himachal Pradesh</p>
+                        <p class="mb-2">📞 +91 123 456 7890</p>
+                        <p class="mb-2">✉️ info@gurukulacademy.edu</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Office Hours</h5>
+                    <div class="text-white-50">
+                        <p class="mb-2">Monday - Friday: 8:00 AM - 4:00 PM</p>
+                        <p class="mb-2">Saturday: 9:00 AM - 1:00 PM</p>
+                        <p class="mb-0">Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="text-center text-white-50 mb-0">© 2025 Gurukul Public School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    event.preventDefault();
+
+
+</body>
+</html>

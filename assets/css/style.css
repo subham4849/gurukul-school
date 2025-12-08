@@ -1,8 +1,14 @@
-/* Global Styles */
+/* =========================================================
+   GLOBAL RESET & BASE STYLES
+========================================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -11,12 +17,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Navbar Styles */
+/* =========================================================
+   NAVBAR
+========================================================= */
 .navbar {
     padding: 0.8rem 0;
     transition: all 0.3s ease;
@@ -34,8 +37,8 @@ html {
     background: #0d6efd;
     border-radius: 6px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
@@ -69,7 +72,9 @@ html {
     width: 80%;
 }
 
-/* Hero Section */
+/* =========================================================
+   HERO SECTION
+========================================================= */
 .hero-section {
     position: relative;
     height: 500px;
@@ -84,10 +89,7 @@ html {
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
 }
 
@@ -95,17 +97,6 @@ html {
     position: relative;
     z-index: 2;
     animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .hero-content h1 {
@@ -122,30 +113,40 @@ html {
     box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
 }
 
-/* Section Titles */
+/* Animation Keyframe */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   TITLES & HEADINGS
+========================================================= */
 .section-title {
     font-size: 2.2rem;
     font-weight: 700;
-    position: relative;
     display: inline-block;
+    position: relative;
     padding-bottom: 15px;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
+    width: 80px;
+    height: 4px;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
     background: #0d6efd;
     border-radius: 2px;
 }
 
-/* About Card */
+/* =========================================================
+   ABOUT / CARD / STATS
+========================================================= */
 .about-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .about-card:hover {
@@ -159,9 +160,8 @@ html {
     padding: 0.5rem 1.5rem;
 }
 
-/* Stats Section */
 .stat-card {
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
     cursor: pointer;
 }
 
@@ -175,9 +175,11 @@ html {
     letter-spacing: 1px;
 }
 
-/* Facilities Section */
+/* =========================================================
+   FACILITIES
+========================================================= */
 .facility-card {
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
     border: 1px solid transparent;
 }
 
@@ -191,15 +193,17 @@ html {
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 12px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-size: 1.8rem;
+    border-radius: 12px;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-/* Testimonials Section */
+/* =========================================================
+   TESTIMONIALS
+========================================================= */
 .testimonial-card {
     transition: all 0.3s ease;
     border: 2px solid transparent;
@@ -207,52 +211,36 @@ html {
 
 .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     border-color: #0d6efd;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .author-avatar {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: white;
+    align-items: center;
+    border-radius: 50%;
     font-weight: 700;
-    font-size: 1.1rem;
-    flex-shrink: 0;
+    color: #fff;
 }
 
-/* Footer */
+/* =========================================================
+   FOOTER
+========================================================= */
 .footer {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
-.footer h5 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-}
-
-.footer .brand-icon {
-    background: white;
-    color: #1a1a2e;
-}
-
 .footer a {
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .footer a:hover {
     color: white !important;
     transform: translateX(5px);
-}
-
-.social-links a {
-    transition: all 0.3s ease;
-    border-radius: 8px;
 }
 
 .social-links a:hover {
@@ -261,88 +249,40 @@ html {
     transform: translateY(-3px);
 }
 
-.map-container {
-    border: 2px dashed rgba(255,255,255,0.2);
+/* =========================================================
+   LOGO & MEDIA FIXES
+========================================================= */
+.school-logo {
+    height: 30px;
+    width: auto;
+    border-radius: 5px;
 }
 
-/* Responsive Design */
+@media (max-width: 991px) {
+    iframe { margin: auto; display: block; }
+}
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+========================================================= */
 @media (max-width: 768px) {
-    .hero-section {
-        height: 400px;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content p {
-        font-size: 1rem;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .stat-card h2 {
-        font-size: 2.5rem;
-    }
-    
-    .navbar-nav .nav-link::after {
-        display: none;
-    }
+    .hero-section { height: 400px; }
+    .hero-content h1 { font-size: 2rem; }
+    .section-title { font-size: 1.8rem; }
+    .navbar-nav .nav-link::after { display: none; }
 }
 
 @media (max-width: 576px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .stat-card h2 {
-        font-size: 2rem;
-    }
+    .hero-content h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.5rem; }
 }
 
-/* Loading Animation */
-.fade-in {
-    animation: fadeIn 0.6s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Utility Classes */
-.shadow-hover {
-    transition: box-shadow 0.3s ease;
-}
-
-.shadow-hover:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-}
-
-/*logo*/
-.school-logo {
-    height: 30px;       /* adjust size */
-    width: auto;        /* keeps aspect ratio */
-    border-radius: 5px; /* optional */
-}
-
-
-/*map*/
-@media (max-width: 991px) {
-    iframe {
-        margin: 0 auto;
-        display: block;
-    }
+body {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    overflow-x: hidden !important;
 }
 
 

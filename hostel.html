@@ -1,16 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Hostel Facilities - Gurukul Public School Baru</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .hostel-schedule-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+        }
+
+        .hostel-schedule-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .life-skills-card,
+        .rules-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .life-skills-card:hover,
+        .rules-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .check-list li {
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .time {
+            padding-right: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+
+            .hostel-schedule-table th,
+            .hostel-schedule-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .life-skills-card,
+            .rules-card {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/images/logo.jpeg" alt="School Logo" class="school-logo">
+                <span class="ms-2">Gurukul Public School</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hostel.html">Hostel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-primary px-4">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Hostel Facilities</h1>
+            <p class="lead text-muted">Home Away From Home</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-4 py-md-5">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title mb-3 mb-md-4">A Home Away From Home</h2>
+                    <p class="lead text-muted">
+                        Our hostel provides a safe, nurturing, and disciplined environment where students learn
+                        independence, teamwork, and values.
+                        We ensure that every student feels comfortable and focused on their academic and personal
+                        growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Grid -->
+    <section class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-4 mb-md-5">World-Class Facilities</h2>
+            <div class="row g-3 g-md-4">
+                <!-- Facility 1 -->
+                <div class="col-md-4">
+                    <div class="facility-card h-100 bg-white p-4 rounded text-center">
+                        <div class="facility-icon mb-3">
+                            🏢
+                        </div>
+                        <h4 class="fw-bold mb-3">Spacious Dormitories</h4>
+                        <p class="text-muted">Well-ventilated, clean, and comfortable living spaces with individual
+                            storage.</p>
+                    </div>
+                </div>
+                <!-- Facility 2 -->
+                <div class="col-md-4">
+                    <div class="facility-card h-100 bg-white p-4 rounded text-center">
+                        <div class="facility-icon mb-3">
+                            🍎
+                        </div>
+                        <h4 class="fw-bold mb-3">Nutritious Dining</h4>
+                        <p class="text-muted">Healthy, hygienic, and balanced vegetarian meals prepared by expert chefs.
+                        </p>
+                    </div>
+                </div>
+                <!-- Facility 3 -->
+                <div class="col-md-4">
+                    <div class="facility-card h-100 bg-white p-4 rounded text-center">
+                        <div class="facility-icon mb-3">
+                            🛡️
+                        </div>
+                        <h4 class="fw-bold mb-3">24/7 Security</h4>
+                        <p class="text-muted">Round-the-clock security personnel and CCTV surveillance for complete
+                            safety.</p>
+                    </div>
+                </div>
+                <!-- Facility 4 -->
+                <div class="col-md-4">
+                    <div class="facility-card h-100 bg-white p-4 rounded text-center">
+                        <div class="facility-icon mb-3">
+                            ⚕️
+                        </div>
+                        <h4 class="fw-bold mb-3">Medical Care</h4>
+                        <p class="text-muted">Regular health checkups and on-call medical assistance for emergencies.
+                        </p>
+                    </div>
+                </div>
+                <!-- Facility 5 -->
+                <div class="col-md-4">
+                    <div class="facility-card h-100 bg-white p-4 rounded text-center">
+                        <div class="facility-icon mb-3">
+                            🎮
+                        </div>
+                        <h4 class="fw-bold mb-3">Recreation Room</h4>
+                        <p class="text-muted">Indoor games, TV room, and library for relaxation and leisure time.</p>
+                    </div>
+                </div>
+                <!-- Facility 6 -->
+                <div class="col-md-4">
+                    <div class="facility-card h-100 bg-white p-4 rounded text-center">
+                        <div class="facility-icon mb-3">
+                            📚
+                        </div>
+                        <h4 class="fw-bold mb-3">Study Hours</h4>
+                        <p class="text-muted">Supervised study sessions to ensure academic focus and homework
+                            completion.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Schedule & Life Skills -->
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="row g-4 g-md-5">
+                <!-- Daily Schedule -->
+                <div class="col-lg-6">
+                    <h3 class="fw-bold mb-4">Daily Routine</h3>
+                    <div class="table-responsive">
+                        <table class="table hostel-schedule-table w-100">
+                            <tbody>
+                                <tr>
+                                    <td><strong>6:00 AM</strong></td>
+                                    <td>Wake Up & Morning Exercise</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>7:30 AM</strong></td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8:00 AM</strong></td>
+                                    <td>School Classes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2:30 PM</strong></td>
+                                    <td>Lunch & Rest</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4:30 PM</strong></td>
+                                    <td>Sports & Games</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6:00 PM</strong></td>
+                                    <td>Supervised Study</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8:30 PM</strong></td>
+                                    <td>Dinner</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>9:30 PM</strong></td>
+                                    <td>Lights Out</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Life Skills -->
+                <div class="col-lg-6">
+                    <div class="life-skills-card">
+                        <h3 class="fw-bold mb-4">❤️ Life Skills & Personal Development</h3>
+                        <p class="text-muted mb-3">Hostel life teaches:</p>
+                        <ul class="list-unstyled check-list mb-4">
+                            <li>Time management</li>
+                            <li>Responsibility</li>
+                            <li>Respect and teamwork</li>
+                            <li>Confidence and independence</li>
+                        </ul>
+
+                        <h5 class="fw-bold mt-4 mb-3">Students also participate in:</h5>
+                        <ul class="list-unstyled check-list">
+                            <li>Group learning activities</li>
+                            <li>Workshops and value-based programs</li>
+                            <li>Cultural and festival celebrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="rules-card text-center">
+                        <h3 class="fw-bold mb-4">📅 Visiting & Leave Rules</h3>
+                        <p class="lead text-muted">
+                            Parents are allowed to visit as per the scheduled visiting hours provided by the school.
+                            Leave is granted only under necessary circumstances with proper permission.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Structure -->
+    <section class="fee-structure py-4 py-md-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-3">Hostel Fee Structure</h2>
+            <p class="text-center text-muted mb-4 mb-md-5">Fees include boarding, lodging, laundry, and meals.</p>
+
+            <div class="table-responsive">
+                <table class="table fee-table">
+                    <thead>
+                        <tr>
+                            <th>CLASS/GRADE</th>
+                            <th>ANNUAL CHARGES</th>
+                            <th>MESS CHARGES (Monthly)</th>
+                            <th>SECURITY (Refundable)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Grade I - V</strong></td>
+                            <td>$1,000</td>
+                            <td>$200</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grade VI - VIII</strong></td>
+                            <td>$1,200</td>
+                            <td>$250</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grade IX - X</strong></td>
+                            <td>$1,500</td>
+                            <td>$300</td>
+                            <td>$500</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Grade XI - XII</strong></td>
+                            <td>$1,800</td>
+                            <td>$350</td>
+                            <td>$500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="alert alert-info mt-4" role="alert">
+                <strong>Note:</strong> Hostel fees are payable in advance on a quarterly basis.
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Have Questions?</h2>
+            <a href="tel:7018002434"><button class="btn btn-primary btn-lg px-5 rounded-pill shadow">Click
+                    Me</button></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="brand-icon bg-white text-dark">G</div>
+                        <h5 class="ms-2 mb-0">Gurukul Public School</h5>
+                    </div>
+                    <p class="text-white-50">Committed to providing quality education and fostering an environment of
+                        excellence.</p>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a>
+                        </li>
+                        <li class="mb-2"><a href="admission.html"
+                                class="text-white-50 text-decoration-none">Admissions</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <div class="text-white-50">
+                        <p class="mb-2">📍( Baru ) Hamirpur,<br>Himachal Pradesh</p>
+                        <p class="mb-2">📞 01972358012</p>
+                        <p class="mb-2">✉️ gurukulbaru2021@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Office Hours</h5>
+                    <div class="text-white-50">
+                        <p class="mb-2 time">Monday - Saturday: 9:00 AM - 3:30 PM</p>
+                        <p class="mb-0">Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="text-center text-white-50 mb-0">© 2025 Gurukul Public School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

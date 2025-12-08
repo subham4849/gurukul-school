@@ -3,14 +3,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Academics - Gurukul Public School</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-text: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+            background: #ffffff;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 900px;
+            margin: 20px auto 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--light-blue);
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .stream-card {
+            background: white;
+            border-left: 4px solid var(--light-blue);
+        }
+
+        .table-responsive {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            margin-bottom: 0;
+            width: 100%;
+            min-width: 600px;
+        }
+
+        .table thead {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .table thead th {
+            padding: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .table tbody td {
+            padding: 15px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .table tbody tr:hover {
+            background: var(--light-gray);
+        }
+
+        .back-button {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background: var(--light-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+        }
+
+        .scroll-to-top.show {
+            display: flex;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--light-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
+        }
+
+        .subject-badge {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--primary-blue);
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
+        }
+
+        .approach-item {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--light-blue);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .approach-item:hover {
+            background: var(--light-gray);
+            transform: translateX(5px);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.2);
+        }
+
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            border-left: 4px solid var(--light-blue);
+            color: var(--dark-text);
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .col-md-6 {
+            padding: 0 15px;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 60px 20px 40px;
+            }
+
+            .subject-badge {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+
+            .col-md-6 {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .table {
+                font-size: 0.9rem;
+            }
+
+            .table thead th,
+            .table tbody td {
+                padding: 12px 10px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <a href="index.html" class="back-button" style="position: absolute; top: 20px; left: 20px;">
+            <i class="fas fa-arrow-left"></i>
+            Back to Home
+        </a>
+        <i class="fas fa-graduation-cap fa-3x" style="margin-bottom: 20px;"></i>
+        <h1>📘 Academics Overview</h1>
+        <p>Gurukul Public School follows the curriculum and evaluation framework prescribed by the Himachal Pradesh Board of School Education (HPBOSE). Our academic system is designed to ensure conceptual clarity, practical learning, moral development, and strong examination readiness.</p>
+    </div>
 
+    <!-- Main Content -->
+    <div class="container" style="margin-bottom: 60px;">
+        <!-- Streams Offered Section -->
+        <section>
+            <h2 class="section-title">🎓 Streams Offered (Class 11–12)</h2>
+            <p style="margin-bottom: 20px;">After Class 10, students can choose between the following streams based on their interests and future career goals:</p>
+            
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Stream</th>
+                            <th>Options</th>
+                            <th>Main Subjects</th>
+                            <th>Additional Subjects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Science</strong></td>
+                            <td>Medical / Non-Medical</td>
+                            <td>Physics, Chemistry + (Biology or Mathematics)</td>
+                            <td>English + (Computer Science / Physical Education)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Arts</strong></td>
+                            <td>Humanities</td>
+                            <td>History, Political Science, Geography, Economics (subject combinations vary)</td>
+                            <td>English + (Computer Science / Physical Education)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="alert alert-info">
+                <strong>📌 Total subjects for Grades 11 & 12: 5</strong><br>
+                → 3 core subjects + 2 additional (English + optional subject)
+            </div>
+        </section>
 
-    
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> 
+        <!-- Subjects Taught Section -->
+        <section>
+            <h2 class="section-title">📚 Subjects Taught (Class Nursery – 10)</h2>
+            <p style="margin-bottom: 20px;">A well-structured curriculum helps students build strong fundamentals and confidence.</p>
+            
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-book-open" style="margin-right: 8px;"></i>Primary & Middle School Subjects
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <span class="subject-badge"><i class="fas fa-language" style="margin-right: 5px;"></i>English</span>
+                            <span class="subject-badge"><i class="fas fa-font" style="margin-right: 5px;"></i>Hindi</span>
+                            <span class="subject-badge"><i class="fas fa-calculator" style="margin-right: 5px;"></i>Mathematics</span>
+                            <span class="subject-badge"><i class="fas fa-flask" style="margin-right: 5px;"></i>Science</span>
+                            <span class="subject-badge"><i class="fas fa-globe" style="margin-right: 5px;"></i>Social Science (SST)</span>
+                            <span class="subject-badge"><i class="fas fa-om" style="margin-right: 5px;"></i>Sanskrit</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="subject-badge"><i class="fas fa-laptop-code" style="margin-right: 5px;"></i>Computer Studies</span>
+                            <span class="subject-badge"><i class="fas fa-comments" style="margin-right: 5px;"></i>Art of Conversation</span>
+                            <span class="subject-badge"><i class="fas fa-spa" style="margin-right: 5px;"></i>Yoga</span>
+                            <span class="subject-badge"><i class="fas fa-lightbulb" style="margin-right: 5px;"></i>General Knowledge</span>
+                            <span class="subject-badge"><i class="fas fa-heart" style="margin-right: 5px;"></i>Moral Values</span>
+                            <span class="subject-badge"><i class="fas fa-palette" style="margin-right: 5px;"></i>Co-curricular Activities</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Approach Section -->
+        <section>
+            <h2 class="section-title">🏫 Teaching Approach</h2>
+            <p style="margin-bottom: 20px;">We focus on:</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="approach-item">
+                        <i class="fas fa-check-circle" style="color: #10b981; margin-right: 8px;"></i>
+                        <strong>Concept-based learning</strong>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="approach-item">
+                        <i class="fas fa-check-circle" style="color: #10b981; margin-right: 8px;"></i>
+                        <strong>Activity-based and practical understanding</strong>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="approach-item">
+                        <i class="fas fa-check-circle" style="color: #10b981; margin-right: 8px;"></i>
+                        <strong>Use of technology to support teaching</strong>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="approach-item">
+                        <i class="fas fa-check-circle" style="color: #10b981; margin-right: 8px;"></i>
+                        <strong>Personality development and communication skills</strong>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px;">The learning environment encourages creativity, discipline, confidence, and curiosity.</p>
+        </section>
+
+        <!-- Examination & Evaluation Section -->
+        <section>
+            <h2 class="section-title">📝 Examination & Evaluation System</h2>
+            <p style="margin-bottom: 20px;">To ensure consistent academic monitoring, students undergo multiple assessments throughout the year.</p>
+            
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Type of Assessment</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Weekly Tests</strong></td>
+                            <td>Regular practice and short assessment</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unit Tests (4 per year)</strong></td>
+                            <td>Chapter-wise understanding and progress tracking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pre-Board Examination</strong></td>
+                            <td>Final preparation for board exams</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HPBOSE Board Exam</strong></td>
+                            <td>Final board assessment as per state education standards</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p style="margin-top: 20px;">Regular feedback is provided to help students improve and perform confidently in final examinations.</p>
+        </section>
+
+        <!-- Why Our System Stands Out -->
+        <section>
+            <h2 class="section-title">🏅 Why Our Academic System Stands Out</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card stream-card">
+                        <div class="card-body" style="text-align: center;">
+                            <div class="feature-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h5 style="margin-bottom: 10px;">Updated Curriculum</h5>
+                            <p style="margin: 0;">Aligned with HPBOSE standards</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card stream-card">
+                        <div class="card-body" style="text-align: center;">
+                            <div class="feature-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h5 style="margin-bottom: 10px;">Balanced Focus</h5>
+                            <p style="margin: 0;">Academics, discipline, communication & life skills</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card stream-card">
+                        <div class="card-body" style="text-align: center;">
+                            <div class="feature-icon">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                            <h5 style="margin-bottom: 10px;">Career Guidance</h5>
+                            <p style="margin: 0;">Stream selection & career pathways</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card stream-card">
+                        <div class="card-body" style="text-align: center;">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h5 style="margin-bottom: 10px;">Interactive Learning</h5>
+                            <p style="margin: 0;">Real-world application</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Highlight Box -->
+        <div class="highlight-box">
+            <h3>⭐ Our Philosophy</h3>
+            <p>"At Gurukul Public School, academics are not just about scoring marks — they are about learning, understanding, and evolving into confident and responsible individuals."</p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,14 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Transport Facilities - Gurukul Public School Baru</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Inline styles as requested */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Header Background Update */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .page-header .text-muted {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        /* Custom Card Styles for Transport Features */
+        .transport-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .transport-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .transport-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            /* Using a gradient text effect or just primary color */
+            color: #667eea; 
+        }
+
+        /* Tables Styles */
+        .custom-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            vertical-align: middle;
+        }
+        .custom-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        /* Safety Section */
+        .safety-card {
+            background: #f8f9fa;
+            border-left: 5px solid #0d6efd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .safety-card:hover {
+            transform: translateX(5px);
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Time class from hostel.html */
+        .time {
+            padding-right: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            .transport-card {
+                padding: 1.5rem;
+            }
+            .custom-table th, .custom-table td {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                 <img src="assets/images/logo.jpeg" alt="School Logo" class="school-logo">
+                <span class="ms-2">Gurukul Public School</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="academics.html">Academics</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="hostel.html">Hostel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="transport.html">Transport</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admission.html">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-primary px-4">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Safe & Secure Transportation</h1>
+            <p class="lead text-muted">Connecting Campus to Home</p>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="py-4 py-md-5">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title mb-3 mb-md-4">Your Child's Safety, Our Priority</h2>
+                    <p class="lead text-muted">
+                        We provide a fleet of GPS-enabled buses covering all major routes across the city and suburbs. 
+                        Our transport system is designed to ensure safe, comfortable, and punctual travel for all students.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section class="py-4 py-md-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-4 mb-md-5">Key Features</h2>
+            <div class="row g-3 g-md-4">
+                <!-- Feature 1 -->
+                <div class="col-md-4">
+                    <div class="transport-card">
+                        <div class="transport-icon">📍</div>
+                        <h4 class="fw-bold mb-3">GPS Tracking</h4>
+                        <p class="text-muted">Real-time bus tracking facility available for parents through our mobile app.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-md-4">
+                    <div class="transport-card">
+                        <div class="transport-icon">🎥</div>
+                        <h4 class="fw-bold mb-3">CCTV Surveillance</h4>
+                        <p class="text-muted">Cameras installed in every bus to monitor student safety and discipline.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-md-4">
+                    <div class="transport-card">
+                        <div class="transport-icon">👨‍✈️</div>
+                        <h4 class="fw-bold mb-3">Experienced Drivers</h4>
+                        <p class="text-muted">Background-verified, trained, and experienced drivers ensuring safe driving.</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="col-md-4">
+                    <div class="transport-card">
+                        <div class="transport-icon">👩‍💼</div>
+                        <h4 class="fw-bold mb-3">Female Attendants</h4>
+                        <p class="text-muted">A female attendant is present in every bus to assist younger children.</p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="col-md-4">
+                    <div class="transport-card">
+                        <div class="transport-icon">💊</div>
+                        <h4 class="fw-bold mb-3">First Aid Kits</h4>
+                        <p class="text-muted">Fully equipped first aid kits available in all buses for rapid medical response.</p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="col-md-4">
+                    <div class="transport-card">
+                        <div class="transport-icon">🏡</div>
+                        <h4 class="fw-bold mb-3">Door-to-Door</h4>
+                        <p class="text-muted">Safe pick-up and drop-off services from designated points near your home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Routes & Safety -->
+    <section class="py-4 py-md-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Routes Table -->
+                <div class="col-lg-7">
+                    <h3 class="fw-bold mb-4">Coverage Area</h3>
+                    <div class="transport-card text-start">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="transport-icon mb-0 me-3" style="font-size: 2rem;">🗺️</span>
+                            <h4 class="fw-bold mb-0">Extensive Coverage</h4>
+                        </div>
+                        <p class="text-muted lead">
+                            Our efficient transport network covers a radius of <strong>upto 20 KM</strong> from the school campus, ensuring that students from the city and surrounding suburbs can commute comfortably.
+                        </p>
+                        <p class="text-muted mb-0">
+                            * Specific pick-up and drop-off points are allocated at the time of admission.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Safety Guidelines -->
+                <div class="col-lg-5">
+                    <h3 class="fw-bold mb-4">Safety Guidelines</h3>
+                    <div class="safety-card">
+                        <h5 class="fw-bold mb-2">For Students</h5>
+                        <p class="mb-0 text-muted">Remain seated, keep head/hands inside, do not distract the driver.</p>
+                    </div>
+                    <div class="safety-card">
+                        <h5 class="fw-bold mb-2">For Parents</h5>
+                        <p class="mb-0 text-muted">Ensure timely drop-off/pickup, carry ID card while receiving the child.</p>
+                    </div>
+                    <div class="safety-card">
+                        <h5 class="fw-bold mb-2">Emergency Policy</h5>
+                        <p class="mb-0 text-muted">In case of breakdown/delay, parents are notified via SMS instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact CTA -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="fw-bold mb-4">Need Transport Assistance?</h2>
+            <a href="tel:7018002434"><button class="btn btn-primary btn-lg px-5 rounded-pill shadow">Call Transport In-charge</button></a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="brand-icon bg-white text-dark">G</div>
+                        <h5 class="ms-2 mb-0">Gurukul Public School</h5>
+                    </div>
+                    <p class="text-white-50">Committed to providing quality education and fostering an environment of excellence.</p>
+                </div>
+                <div class="col-lg-2 col-6">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="admission.html" class="text-white-50 text-decoration-none">Admissions</a></li>
+                         <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                 <div class="col-lg-3 col-6">
+                    <h5 class="mb-3">Contact Us</h5>
+                    <div class="text-white-50">
+                        <p class="mb-2">📍( Baru ) Hamirpur,<br>Himachal Pradesh</p>
+                        <p class="mb-2">📞 01972358012</p>
+                        <p class="mb-2">✉️ gurukulbaru2021@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Office Hours</h5>
+                    <div class="text-white-50">
+                        <p class="mb-2 time">Monday - Saturday: 9:00 AM - 3:30 PM</p>
+                        <p class="mb-0">Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="text-center text-white-50 mb-0">© 2025 Gurukul Public School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

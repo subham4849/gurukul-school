@@ -419,7 +419,7 @@
             .left-panel {
                 padding: 30px 25px;
             }
-            
+
             .academy-name {
                 font-size: 26px;
             }
@@ -430,6 +430,12 @@
             
             .login-title {
                 font-size: 26px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .back-btn {
+                margin-bottom: 15px;
             }
         }
         
@@ -468,6 +474,32 @@
             height: 1.2rem;
             border-width: 0.15em;
         }
+
+        .back-btn {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: 1px solid rgba(255,255,255,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: white;
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+
     </style>
 </head>
 <body>
@@ -481,6 +513,9 @@
     
     <div class="container-fluid">
         <!-- Left Panel -->
+         <a href="../index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
         <div class="left-panel">
             <div class="left-panel-content">
                 <div class="academy-logo">
@@ -580,9 +615,8 @@
 </form>
 
                     <div class="footer">
-                        <div class="footer-logo">Gurukul Academy</div>
-                        <div class="copyright">© 2024 Gurukul Academy. All Rights Reserved.</div>
-                        <div class="mt-2" style="font-size: 12px; opacity: 0.7;">
+                        <div class="footer-logo">Gurukul Public School</div>
+                          <div class="mt-2" style="font-size: 12px; opacity: 0.7;">
                             <i class="fas fa-shield-alt me-1"></i> Secure SSL Connection
                         </div>
                     </div>

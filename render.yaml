@@ -1,8 +1,9 @@
 services:
   - type: web
     name: gurukul-school
-    env: docker
+    runtime: docker
     plan: free
+    region: singapore
     dockerfilePath: ./Dockerfile
     envVars:
       - key: DB_HOST
@@ -25,9 +26,5 @@ services:
 databases:
   - name: gurukul-db
     plan: free
-    engine: mysql
-    version: "8"
-    databaseName: gurukul
-    user: gurukul_user
     region: singapore
     ipAllowList: []

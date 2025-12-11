@@ -29,4 +29,5 @@ databases:
     version: "8"
     databaseName: gurukul
     user: gurukul_user
+    region: singapore
     ipAllowList: []

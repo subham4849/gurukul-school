@@ -1,12 +1,12 @@
 <?php
-$host = "127.0.0.1:3307";
-$user = "root";
-$pass = "admin123";
-$dbname = "gurukul_db";
+$host = getenv("DB_HOST");
+$db   = getenv("DB_NAME");
+$user = getenv("DB_USER");
+$pass = getenv("DB_PASSWORD");
 
-$conn = mysqli_connect($host, $user, $pass, $dbname);
+$conn = new mysqli($host, $user, $pass, $db);
 
-if (!$conn) {
-    die("❌ Database connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
 ?>

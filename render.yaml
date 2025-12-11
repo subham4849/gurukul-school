@@ -25,8 +25,8 @@ services:
 databases:
   - name: gurukul-db
     plan: free
-    databaseName: gurukul
-    user: gurukul_user
     engine: mysql
     version: "8"
+    databaseName: gurukul
+    user: gurukul_user
     ipAllowList: []

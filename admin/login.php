@@ -420,8 +420,13 @@
                 padding: 30px 25px;
             }
 
+            .logo-icon {
+                margin-top: 20px;
+            }
+
             .academy-name {
                 font-size: 26px;
+                margin-top: 20px;
             }
             
             .login-card {
@@ -433,11 +438,6 @@
             }
         }
 
-        @media (max-width: 500px) {
-            .back-btn {
-                margin-bottom: 15px;
-            }
-        }
         
         /* Animation for form inputs */
         @keyframes fadeInUp {
